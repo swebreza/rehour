@@ -32,12 +32,57 @@ class HomeScreen extends StatelessWidget {
           (tx) {
             return Card(
               elevation: 20,
-              child: Row(
+              child: Column(
                 children: <Widget>[
-                  Card(
-                    elevation: 20,
-                    child: Text(tx.topic),
+                  Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                      color: Colors.black,
+                      width: 2,
+                    )),
+                    padding: EdgeInsets.only(
+                      bottom: 2,
+                      left: 50,
+                      right: 50,
+                      top: 2,
+                    ),
+                    margin: EdgeInsets.only(
+                      top: 10,
+                      left: 20,
+                      right: 10,
+                      bottom: 10,
+                    ),
+                    child: Text(
+                      tx.topic,
+                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),
+                    ),
                   ),
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(left: 25, bottom: 80),
+                        child: Text(tx.comment),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(
+                          left: 10,
+                          right: 10,
+                        ),
+                        child: Text(
+                          "Date:- " +
+                              tx.date.day.toString() +
+                              "/" +
+                              tx.date.month.toString() +
+                              "/" +
+                              tx.date.year.toString(),
+                        ),
+                      )
+                    ],
+                  )
                 ],
               ),
             );
