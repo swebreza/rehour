@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 class InputValues {
   String topic;
@@ -7,7 +8,7 @@ class InputValues {
   InputValues({
     @required this.comment,
     @required this.topic,
-    @required this.date,
+    @required this.date, String id,
   });
 
  

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:rehour/userList.dart';
-import 'package:rehour/HomeScreen.dart';
-// import './logic.dart';
+import 'package:rehour/user_transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,11 +25,14 @@ class MyHomePage extends StatelessWidget {
         onPressed: () {},
         child: Icon(
           Icons.add,
-        ),elevation: 20,
+        ),
+        elevation: 20,
         backgroundColor: Colors.pink,
       ),
       backgroundColor: Colors.yellow,
-      body: HomeScreen(),
+      body: Container(
+        child: UserTransactions(),
+      ),
     );
   }
-}       
+}
