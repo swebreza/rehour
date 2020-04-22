@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                         right: 10,
                       ),
                       child: Text(
-                        DateFormat.yMMMEd().format(InputValues().date).toString(),
+                        DateFormat.yMMMEd().format(InputValues(comment: null, topic: null, date: DateTime.now()).date).toString(),
                         style: TextStyle(
                           fontSize: 10,
                           fontStyle: FontStyle.italic,
