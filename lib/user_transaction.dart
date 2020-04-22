@@ -32,7 +32,7 @@ class _UserTransactionsState extends State<UserTransactions> {
       date: DateTime.now(),
     ),
   ];
-  void _addNewTransaction(String txtopic, String txcomment) {
+  void addNewTransaction(String txtopic, String txcomment) {
     final newtx = InputValues(
       topic: txtopic,
       comment: txcomment,
@@ -49,7 +49,8 @@ class _UserTransactionsState extends State<UserTransactions> {
     return Column(
       children: <Widget>[
         HomeScreen(_values),
-        UserInput(_addNewTransaction),
+        UserInput(addNewTransaction),
+        
       ],
     );
   }
