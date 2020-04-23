@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import './userInput.dart';
+// import './userInput.dart';
 import './inputValues.dart';
 import 'package:intl/intl.dart';
 // import 'package:rehour/UserInput.dart';
 
 class HomeScreen extends StatelessWidget {
-  final List<InputValues> _values;
-  HomeScreen(this._values);
+  // final List<InputValues> _values;
+  // HomeScreen(this._values);
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      width: double.infinity,
+      height: double.infinity,
       child: GridView.builder(
-
+        semanticChildCount: 2,
+        itemCount: 20,
         itemBuilder: (ctx, index) {
           return Card(
             elevation: 20,
@@ -36,15 +38,24 @@ class HomeScreen extends StatelessWidget {
                     right: 10,
                     bottom: 10,
                   ),
-                  child: Text(InputValues(topic: '$index', comment: null, date: null,).topic,
+                  child: Text(
+                    InputValues(
+                      topic: '$index',
+                      comment: null,
+                      date: null,
+                    ).topic,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                  ),),
-                
+                  ),
+                ),
                 Row(
                   children: <Widget>[
                     Container(
                       margin: EdgeInsets.only(left: 25, bottom: 80),
-                      child: Text(InputValues(comment: '$index', date: null, topic: null,).comment),
+                      child: Text(InputValues(
+                        comment: '$index',
+                        date: null,
+                        topic: null,
+                      ).comment),
                     ),
                   ],
                 ),
@@ -56,7 +67,13 @@ class HomeScreen extends StatelessWidget {
                         right: 10,
                       ),
                       child: Text(
-                        DateFormat.yMMMEd().format(InputValues(comment: null, topic: null, date: DateTime.now()).date).toString(),
+                        DateFormat.yMMMEd()
+                            .format(InputValues(
+                                    comment: null,
+                                    topic: null,
+                                    date: DateTime.now())
+                                .date)
+                            .toString(),
                         style: TextStyle(
                           fontSize: 10,
                           fontStyle: FontStyle.italic,
@@ -70,11 +87,11 @@ class HomeScreen extends StatelessWidget {
           );
         },
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-         maxCrossAxisExtent: 200.0,
-         mainAxisSpacing: 10.0,
-         crossAxisSpacing: 10.0,
-         childAspectRatio: 20.0,
-       ),
+          maxCrossAxisExtent: 200.0,
+          mainAxisSpacing: 10.0,
+          crossAxisSpacing: 10.0,
+          childAspectRatio: 10.0,
+        ),
       ),
     );
   }
